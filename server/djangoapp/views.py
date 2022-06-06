@@ -96,7 +96,7 @@ def registration_request(request):
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
-        url = ''
+        url = 'https://722b0a8f.eu-gb.apigw.appdomain.cloud/capstone'
         # Get dealers from the URL
         context = {"dealerships": restapis.get_dealers_from_cf(url)}
         # Concat all dealer's short name
@@ -108,7 +108,7 @@ def get_dealerships(request):
 def get_dealer_details(request, dealer_id):
     context = {}
     if request.method == "GET":
-        url = ''
+        url = 'https://722b0a8f.eu-gb.apigw.appdomain.cloud/capstone'
         context = {"reviews":  restapis.get_dealer_reviews_by_id_from_cf(url, dealer_id)}
         return render(request, 'djangoapp/dealer_details.html', context)
 
@@ -140,7 +140,7 @@ def add_review(request, dealer_id):
                 review["car_year"]= car.year.strftime("%Y")
             json_payload = {"review": review}
             print (json_payload)
-            url = ""
+            url = "https://722b0a8f.eu-gb.apigw.appdomain.cloud/capstone"
             restapis.post_request(url, json_payload, dealerId=dealer_id)
             return redirect("djangoapp:dealer_details", dealer_id=dealer_id)
         else:
