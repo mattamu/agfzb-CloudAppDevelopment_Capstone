@@ -7,7 +7,7 @@ def main(dict):
     authenticator = IAMAuthenticator("SzJ5tNAzMZS3OpYTLkzOAxaBU-0lckN8L-4WF9EFmAT2")
     service = CloudantV1(authenticator=authenticator)
     # my COUCH_URL
-    service.set_service_url("https://722b0a8f.eu-gb.apigw.appdomain.cloud/capstone")
+    service.set_service_url("https://dfce011a-67e6-4ba7-83b3-f4e4b904b87e-bluemix.cloudantnosqldb.appdomain.cloud")
     response = service.post_find(
         db='reviews',
         selector={'dealership': {'$eq': int(dict["id"])}},
