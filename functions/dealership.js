@@ -4,12 +4,12 @@ function main(params) {
         const { CloudantV1 } = require('@ibm-cloud/cloudant');
         const { IamAuthenticator } = require('ibm-cloud-sdk-core');
         // my IAM_API_KEY
-        const authenticator = new IamAuthenticator({ apikey: '' })
+        const authenticator = new IamAuthenticator({ apikey: 'SzJ5tNAzMZS3OpYTLkzOAxaBU-0lckN8L-4WF9EFmAT2' })
         const cloudant = CloudantV1.newInstance({
             authenticator: authenticator
         });
         // my COUCH_URL
-        cloudant.setServiceUrl('');
+        cloudant.setServiceUrl('https://722b0a8f.eu-gb.apigw.appdomain.cloud/capstone');
         if (params.st) {
             // return dealership with this state 
             cloudant.postFind({db:'dealerships',selector:{st:params.st}})
