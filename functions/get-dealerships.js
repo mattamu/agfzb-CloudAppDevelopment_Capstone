@@ -10,7 +10,7 @@ function main(params) {
             authenticator: authenticator
         });
         // my COUCH_URL
-        cloudant.setServiceUrl('https://722b0a8f.eu-gb.apigw.appdomain.cloud/capstone');
+        cloudant.setServiceUrl('https://dfce011a-67e6-4ba7-83b3-f4e4b904b87e-bluemix.cloudantnosqldb.appdomain.cloud');
         if (params.st) {
             // return dealership with this state 
             cloudant.postFind({db:'dealerships',selector:{st:params.st}})
